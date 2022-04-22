@@ -115,6 +115,7 @@ const sectionTest = [
 ];
 
 export const App = ({ sections = [] }) => {
+  console.log(sections);
   return (
     <div>
       {sections.map(section => {
