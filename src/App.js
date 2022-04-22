@@ -114,7 +114,7 @@ const sectionTest = [
   }
 ];
 
-export const App = ({ sections = [] }) => {
+export const App = ({ sections = sectionTest }) => {
   return (
     <div>
       {sections.map(section => {
