@@ -117,7 +117,7 @@ const sectionTest = [
 export const App = ({ sections = sectionTest }) => {
   return (
     <div>
-      {sections.map(section => {
+      {JSON.parse(sections).map(section => {
         console.log(sections);
 
         section.children = section.children.map(item => {
