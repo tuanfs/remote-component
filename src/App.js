@@ -9,6 +9,9 @@ export const App = ({ name = "World" }) => {
       <Button variant="contained" sx={{ color: "red" }}>
         Click
       </Button>
+      <Button variant="outlined" sx={{ marginLeft: "20px" }}>
+        Have a nice day
+      </Button>
     </div>
   );
 };
