@@ -1,17 +1,11 @@
 import React from "react";
-import { Title } from "./components/Title";
-import { Button } from "@mui/material";
+import Banner from "./components/Banner";
+import CardProductItem from "./components/CardProductItem";
 
-export const App = ({ name = "World" }) => {
+export const App = ({ content = [] }) => {
   return (
     <div>
-      <Title>Hello {name}! Le Van Tuan</Title>
-      <Button variant="contained" sx={{ color: "red" }}>
-        Click
-      </Button>
-      <Button variant="outlined" sx={{ marginLeft: "20px" }}>
-        Have a nice day
-      </Button>
+      <CardProductItem content={content} />
     </div>
   );
 };
