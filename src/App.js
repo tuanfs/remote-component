@@ -115,10 +115,11 @@ const sectionTest = [
 ];
 
 export const App = ({ sections = [] }) => {
-  console.log(sections);
   return (
     <div>
       {sections.map(section => {
+        console.log(sections);
+
         section.children = section.children.map(item => {
           item.children = item.children.map((item, index) => {
             return (
