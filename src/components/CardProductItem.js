@@ -54,17 +54,17 @@ export default function CardProductItem({ content }) {
               >
                 đ1.700.000
               </Typography>
-              <Button
+
+              <Avatar
                 sx={{
+                  bgcolor: "#d0021c",
+                  width: "40px",
+                  height: "40px",
                   color: "white"
                 }}
               >
-                <Avatar
-                  sx={{ bgcolor: "#d0021c", width: "40px", height: "40px" }}
-                >
-                  <AddShoppingCartIcon />
-                </Avatar>
-              </Button>
+                <AddShoppingCartIcon />
+              </Avatar>
             </Box>
           </CardContent>
         </CardMedia>
