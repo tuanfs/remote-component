@@ -2,10 +2,12 @@ import React from "react";
 import Banner from "./components/Banner";
 import CardProductItem from "./components/CardProductItem";
 
-export const App = ({ content = [] }) => {
+export const App = ({ sections = [] }) => {
   return (
     <div>
-      <CardProductItem content={content} />
+      {sections.map((section, item) => (
+        <Banner />
+      ))}
     </div>
   );
 };
