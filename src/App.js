@@ -114,7 +114,7 @@ const sectionTest = [
   }
 ];
 
-export const App = ({ sections = sectionTest }) => {
+export const App = ({ sections = JSON.stringify(sectionTest) }) => {
   return (
     <div>
       {JSON.parse(sections).map(section => {
