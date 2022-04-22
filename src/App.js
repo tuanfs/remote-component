@@ -118,15 +118,11 @@ export const App = ({ sections = JSON.stringify(sectionTest) }) => {
   return (
     <div>
       {JSON.parse(sections).map(section => {
-        console.log(section);
-        console.log(sections);
-
         section.children = section.children.map(item => {
           item.children = item.children.map((item, index) => {
             return (
-              item.component.type !== "" && (
-                <CardProductItem key={index} content={item.component.content} />
-              )
+              item.component.type !== "" &&
+              typeComponent[item.component.type](item.component.content, index)
             );
           });
           return (
