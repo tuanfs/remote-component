@@ -116,27 +116,28 @@ const sectionTest = [
 
 export const App = ({ sections = JSON.stringify(sectionTest) }) => {
   return (
-    <div>
-      {JSON.parse(sections).map(section => {
-        section.children = section.children.map(item => {
-          item.children = item.children.map((item, index) => {
+    <Box sx={{ display: "flex" }}>
+      <Box sx={{ margin: "auto" }}>
+        {JSON.parse(sections).map(section => {
+          section.children = section.children.map(item => {
+            item.children = item.children.map((item, index) => {
+              return (
+                item.component.type !== "" &&
+                typeComponent[item.component.type](
+                  item.component.content,
+                  index
+                )
+              );
+            });
             return (
-              item.component.type !== "" &&
-              typeComponent[item.component.type](item.component.content, index)
+              <Box sx={{ marginRight: "20px" }} key={item.id}>
+                {item.children}
+              </Box>
             );
           });
-          return (
-            <Box sx={{ marginRight: "20px" }} key={item.id}>
-              {item.children}
-            </Box>
-          );
-        });
-        return (
-          <Box sx={{ display: "flex" }} key={section.id}>
-            {section.children}
-          </Box>
-        );
-      })}
-    </div>
+          return <Box key={section.id}>{section.children}</Box>;
+        })}
+      </Box>
+    </Box>
   );
 };
