@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Box } from "@mui/material";
 
-export default function Banner({ content = [] }) {
-  const [imgValue, setImgValue] = useState(
-    "https://cf.shopee.vn/file/18bb5b3a18824336dcd5ce3ed5f22431"
-  );
-
-  useEffect(() => {
-    if (content.length > 0) {
-      setImgValue(content[0]);
-    }
-  }, [content]);
+export default function Banner({ section }) {
   return (
-    <Box
-      sx={{
-        width: "100%",
-        height: "100%"
-      }}
-    >
-      <img
-        sx={{ height: "100%", width: "100%", objectFit: "contain" }}
-        src={imgValue}
-        alt="Banner"
-      />
+    <Box>
+      {section.children.map((item, index) => (
+        <Box key={index}>
+          {item.children.map((item, index) => (
+            <Box
+              key={index}
+              sx={{
+                width: "100%",
+                height: "100%"
+              }}
+            >
+              <img
+                sx={{ height: "100%", width: "100%", objectFit: "contain" }}
+                src={item.content && item.content.length > 0 && item.content[0]}
+                alt="Banner"
+              />
+            </Box>
+          ))}
+        </Box>
+      ))}
     </Box>
   );
 }
